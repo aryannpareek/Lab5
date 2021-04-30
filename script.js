@@ -122,12 +122,9 @@ readTextButton.addEventListener("click", function()
       utterThis2.voice = voices[i];
     }
   }
-  //utterThis.volume = vol / 100;
-  //utterThis2.volume = vol / 100;
-  var myVolume1 = utterThis.volume;
-  var myVolume2 = utterThis2.volume;
-  myVolume1 = vol.value / 100;
-  myVolume2 = vol.value / 100;
+  utterThis.volume = vol.value / 100;
+  utterThis2.volume = vol.value / 100;
+  
   synth.speak(utterThis);
   synth.speak(utterThis2);
 });
@@ -151,32 +148,6 @@ function populateVoiceList()
     voiceSelect.appendChild(option);
   }
 }
-
-/*const slider = document.getElementById('volume-group');
-let vol = document.querySelector("[type='range']");
-slider.addEventListener("input", function()
-{
-  if(vol.value == 0) 
-  {
-    document.getElementsByTagName('img')[0].src = "icons/volume-level-0.svg";
-    document.getElementsByTagName('img').alt = "Volume Level 0";
-  } 
-  else if(vol.value >= 1 && vol.value <= 33) 
-  {
-    document.getElementsByTagName('img')[0].src = "icons/volume-level-1.svg";
-    document.getElementsByTagName('img').alt = "Volume Level 1";
-  } 
-  else if(vol.value >= 34 && vol.value <= 66) 
-  {
-    document.getElementsByTagName('img')[0].src = "icons/volume-level-2.svg";
-    document.getElementsByTagName('img').alt = "Volume Level 2";
-  } else 
-  {
-    document.getElementsByTagName('img')[0].src = "icons/volume-level-3.svg";
-    document.getElementsByTagName('img').alt = "Volume Level 3";
-  }
-  console.log(vol.value);
-});*/
 
 /**
  * Takes in the dimensions of the canvas and the new image, then calculates the new
